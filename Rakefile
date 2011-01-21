@@ -24,7 +24,7 @@ task "v8:debug" do
   sh "cd ext/v8/upstream && make debug"
 end
 
-Rake::ExtensionTask.new("v8", eval(File.read("therubyracer.gemspec"))) do |ext|    
+Rake::ExtensionTask.new("v8", eval(File.read("therubyracer-heroku.gemspec"))) do |ext|    
   ext.lib_dir = "lib/v8"
   ext.source_pattern = "*.{cpp,h}"
 end

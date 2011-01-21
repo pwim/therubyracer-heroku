@@ -3,12 +3,12 @@ $:.push File.expand_path("../lib", __FILE__)
 require "v8/version"
 
 Gem::Specification.new do |s|
-  s.name = s.rubyforge_project = "therubyracer"
-  s.summary = "Embed the V8 Javascript interpreter into Ruby"
+  s.name = s.rubyforge_project = "therubyracer-heroku"
+  s.summary = "Embed the V8 Javascript interpreter into Ruby built for Heroku"
   s.version = V8::VERSION
   s.authors = ["Charles Lowell", "Bill Robertson"]
   s.description = "Call javascript code and manipulate javascript objects from ruby. Call ruby code and manipulate ruby objects from javascript."
-  s.homepage = "http://github.com/cowboyd/therubyracer"
+  s.homepage = "http://github.com/aler/therubyracer-heroku"
   s.email = "cowboyd@thefrontside.net"
   
   s.files = `git ls-files`.split("\n").reject {|f| f =~ /^ext\/.*\/samples/ || f =~ /^ext\/.*\/test/ || f =~ /^ext\/.*\/benchmarks/}
