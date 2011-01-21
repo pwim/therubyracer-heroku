@@ -8,7 +8,6 @@ v8.so
 *~
 docs/cpp/html/*
 
-ext/v8/upstream/build
 
 pkg/
 tmp/
