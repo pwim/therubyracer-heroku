@@ -4,11 +4,10 @@ require 'set'
 UPSTREAM = File.expand_path(File.dirname(__FILE__) + "/upstream")
 BUILD = "#{UPSTREAM}/build/v8"
 
-
-puts "Compiling V8"
-
-# because this fail on heroku we are using prebuild v8
-#system("cd #{UPSTREAM} && make") or raise "Error compiling V8"
+unless RUBY_PLATFORM =~ /x86_64-linux/
+    puts "Compiling V8"
+    system("cd #{UPSTREAM} && make clean && make") or raise "Error compiling V8"
+end
 
 find_header('v8.h', "#{BUILD}/include")
 have_library('pthread')
