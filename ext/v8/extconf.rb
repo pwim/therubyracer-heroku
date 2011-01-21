@@ -7,7 +7,8 @@ BUILD = "#{UPSTREAM}/build/v8"
 
 puts "Compiling V8"
 
-system("cd #{UPSTREAM} && make") or raise "Error compiling V8"
+# because this fail on heroku we are using prebuild v8
+#system("cd #{UPSTREAM} && make") or raise "Error compiling V8"
 
 find_header('v8.h', "#{BUILD}/include")
 have_library('pthread')
